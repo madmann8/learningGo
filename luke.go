@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"luke"
+
+	"github.com/madmann8/learningGo/luke"
 )
 
 func main() {

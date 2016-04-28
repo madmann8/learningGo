@@ -1,0 +1,37 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;sequence&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../.." />
+    </CLASSES>
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/.git" />
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/maps/.idea" />
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/slices/.idea" />
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/03_variables/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/.idea" />
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/arrays/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/.git" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/04_scope/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../golang/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/22_go-routines/.idea" />
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/forloop/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/04_scope/03_order-matters/.idea" />
+      <root url="file://$PROJECT_DIR$/../../GolangBookTraining/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/01_getting-started/02_numeral-systems/04_loop/.idea" />
+      <root url="file://$PROJECT_DIR$/../../.idea" />
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/functions/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/19_map/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/.idea" />
+      <root url="file://$PROJECT_DIR$/../../GolangBookTraining/.git" />
+      <root url="file://$PROJECT_DIR$/../../../GoesToEleven/golangtraining/01_getting-started/02_numeral-systems/.idea" />
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/01_helloWorld/.idea" />
+      <root url="file://$PROJECT_DIR$/../.git" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$PROJECT_DIR$/../../udemyTraining/exercisesPt2/.idea" />
+      <root url="file://$PROJECT_DIR$/.idea" />
+    </excluded>
+  </library>
+</component>

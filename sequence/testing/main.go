@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fib.Fib{5}
-	fib.Add
+	t:= fib.Fib{n:10, m:5}
+	fmt.Println(t.Add())
 }

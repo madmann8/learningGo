@@ -23,7 +23,7 @@ func (fib *Fib) Add() int {
 	for i := 0; i < fib.N; i++ {
 		p, q = q, p+q
 	}
-	return p+fib.M
+	return p+Fib{
 }
 
 func (fib *Fib) Mul() int {

@@ -23,7 +23,12 @@ func (fib *Fib) Add() int {
 	for i := 0; i < fib.N; i++ {
 		p, q = q, p+q
 	}
-	return p+Fib{
+	f:= 0
+	s:= 1
+	for i := 0; i < fib.N; i++ {
+		f, s = f, f+s
+	}
+	return p+f
 }
 
 func (fib *Fib) Mul() int {
@@ -32,8 +37,12 @@ func (fib *Fib) Mul() int {
 	for i := 0; i < fib.N; i++ {
 		p, q = q, p+q
 	}
-	f:=p
-	return f*fib.M
+	f:= 0
+	s:= 1
+	for i := 0; i < fib.N; i++ {
+		f, s = f, f+s
+	}
+	return f*p
 }
 
 func (fib *Fib) Div() int {
@@ -42,7 +51,12 @@ func (fib *Fib) Div() int {
 	for i := 0; i < fib.N; i++ {
 		p, q = q, p+q
 	}
-	return p/fib.M
+	f:= 0
+	s:= 1
+	for i := 0; i < fib.N; i++ {
+		f, s = f, f+s
+	}
+	return p/f
 }
 
 func (fib *Fib) Sum()int {

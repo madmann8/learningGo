@@ -56,20 +56,24 @@ func (fib *Fib) Sum()int {
 	return s
 }
 
-func (fib *Fib) Phi()int {
-	p:= 0
-	q:= 1
+func (fib *Fib) Phi()float64 {
+	var r float64
+	var p float64
+	var q float64
+	p= 0
+	q= 1
 	for i := 0; i < fib.N -1; i++ {
 		p, q = q, p+q
 	}
-	r:=p
+	r=p
 	p= 0
 	q= 1
 	for i := 0; i < fib.N; i++ {
 		p, q = q, p+q
 	}
-	g:=p/r
-	return g
+	var g float64
+	g=1 +(r/p)
+	return float64(g)
 }
 
 

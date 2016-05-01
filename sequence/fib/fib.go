@@ -9,6 +9,8 @@ type Fib struct{
 	M int
 }
 
+//Specifies the corresponding Fibonacci Number for the N value inputted
+
 func  (fib *Fib) Fib() int {
 	var p int
 	var q int
@@ -19,6 +21,8 @@ func  (fib *Fib) Fib() int {
 	}
 	return p
 }
+
+//Adds the N and M Fibonacci Values
 
 func (fib *Fib) Add() int {
 	p:= 0
@@ -35,6 +39,8 @@ func (fib *Fib) Add() int {
 	return f+r
 }
 
+//Multiplies the N and M Fibonacci Values
+
 func (fib *Fib) Mul() int {
 	p:= 0
 	q:= 1
@@ -49,6 +55,8 @@ func (fib *Fib) Mul() int {
 	}
 	return f*r
 }
+
+//Divides the N and M Fibonacci Values
 
 func (fib *Fib) Div() float64 {
 	var p float64
@@ -71,6 +79,8 @@ func (fib *Fib) Div() float64 {
 
 }
 
+//Adds all Fibonacci values prior to N and N
+
 func (fib *Fib) Sum()int {
 	p:= 0
 	q:= 1
@@ -81,6 +91,8 @@ func (fib *Fib) Sum()int {
 	}
 	return s
 }
+
+//Calculates the Golden Ratio using N and M
 
 func (fib *Fib) Phi()float64 {
 	var p float64

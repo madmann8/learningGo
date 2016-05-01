@@ -12,6 +12,7 @@ type testnumbers struct {
 	Add        int
 	Mult       int
 	Div        float64
+	Sum int
 }
 func RoundDown(input float64, places int) (newVal float64) {
 	var round float64
@@ -23,9 +24,9 @@ func RoundDown(input float64, places int) (newVal float64) {
 }
 
 var tests = []testnumbers{
-	{[]int{1, 2}, 1, 1, 2, 1, 1},
-	{[]int{6, 10}, 8, 55, 63, 440, RoundDown(0.14545454545,4)},
-	{[]int{36, 42}, 14930352, 267914296, 282844648, 4000054745112192, RoundDown(0.05572809,4)},
+	{[]int{1, 2}, 1, 1, 2, 1, 1,1},
+	{[]int{6, 10}, 8, 55, 63, 440, RoundDown(0.14545454545,4,),20},
+	{[]int{36, 42}, 14930352, 267914296, 282844648, 4000054745112192, RoundDown(0.05572809,4),39088168},
 }
 
 func TestFibValues(t *testing.T) {
@@ -132,4 +133,23 @@ func TestFibPhi(t *testing.T) {
 
 	}
 
+}
+
+func TestFibSum(t *testing.T) {
+	for i := 0; i < 3; i++ {
+		s := tests[i]
+		v := s.Sum
+		pair := s.values
+		x:=pair[0]
+		y:=pair[1]
+		l := Fib{N:x,M:y}
+		if v != l.Sum() {
+			t.Error(
+				"For", "Sum()",
+				"expected", v,
+				"got", l.Fib(),
+			)
+		}
+
+	}
 }

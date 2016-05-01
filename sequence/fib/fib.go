@@ -1,7 +1,8 @@
 //Needs work still
 package fib
 
-import()
+import(
+)
 
 type Fib struct{
 	N int
@@ -9,9 +10,11 @@ type Fib struct{
 }
 
 func  (fib *Fib) Fib() int {
-	p:= 0
-	q:= 1
-	for i := 0; i < fib.N; i++ {
+	var p int
+	var q int
+	p= 0
+	q= 1
+	for i := 0; int(i) <int(fib.N); i++ {
 		p, q = q, p+q
 	}
 	return p
@@ -23,12 +26,13 @@ func (fib *Fib) Add() int {
 	for i := 0; i < fib.N; i++ {
 		p, q = q, p+q
 	}
-	f:= 0
-	s:= 1
-	for i := 0; i < fib.N; i++ {
-		f, s = f, f+s
+	f:= p
+	r:= 0
+	t:= 1
+	for i := 0; i < fib.M; i++ {
+		r, t = t, r+t
 	}
-	return p+f
+	return f+r
 }
 
 func (fib *Fib) Mul() int {
@@ -37,26 +41,34 @@ func (fib *Fib) Mul() int {
 	for i := 0; i < fib.N; i++ {
 		p, q = q, p+q
 	}
-	f:= 0
-	s:= 1
-	for i := 0; i < fib.N; i++ {
-		f, s = f, f+s
+	f:= p
+	r:= 0
+	t:= 1
+	for i := 0; i < fib.M; i++ {
+		r, t = t, r+t
 	}
-	return f*p
+	return f*r
 }
 
-func (fib *Fib) Div() int {
-	p:= 0
-	q:= 1
-	for i := 0; i < fib.N; i++ {
+func (fib *Fib) Div() float64 {
+	var p float64
+	p= 0
+	var q float64
+	q= 1
+	for i := 0; float64(i) < float64(fib.N); i++ {
 		p, q = q, p+q
 	}
-	f:= 0
-	s:= 1
-	for i := 0; i < fib.N; i++ {
-		f, s = f, f+s
+	var f float64
+	f= p
+	var r float64
+	var t float64
+	r= 0
+	t= 1
+	for i := 0; float64(i) < float64(fib.M); i++ {
+		r, t = t, r+t
 	}
-	return p/f
+	return f/r
+
 }
 
 func (fib *Fib) Sum()int {
@@ -71,23 +83,27 @@ func (fib *Fib) Sum()int {
 }
 
 func (fib *Fib) Phi()float64 {
-	var r float64
 	var p float64
-	var q float64
 	p= 0
+	var q float64
 	q= 1
-	for i := 0; i < fib.N -1; i++ {
+	for i := 0; float64(i) < float64(fib.N); i++ {
 		p, q = q, p+q
 	}
-	r=p
-	p= 0
-	q= 1
-	for i := 0; i < fib.N; i++ {
-		p, q = q, p+q
+	var f float64
+	f= p
+	var r float64
+	var t float64
+	r= 0
+	t= 1
+	for i := 0; float64(i) < float64(fib.M); i++ {
+		r, t = t, r+t
 	}
 	var g float64
-	g=1 +(r/p)
-	return float64(g)
+	g=f+r
+	var b float64
+	b= g/r
+	return float64(b)
 }
 
 

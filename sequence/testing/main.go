@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	s := fib.Fib{10,6}
-	fmt.Println(s.Sum())
+	s:= fib.Fib{1,2}
+	fmt.Println(s.Add())
 }

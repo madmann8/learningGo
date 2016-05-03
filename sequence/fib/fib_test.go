@@ -26,7 +26,7 @@ func RoundDown(input float64, places int) (newVal float64) {
 var tests = []testnumbers{
 	{[]int{1, 2}, 1, 1, 2, 1, 1,1},
 	{[]int{6, 10}, 8, 55, 63, 440, RoundDown(0.14545454545,4,),20},
-	{[]int{36, 42}, 14930352, 267914296, 282844648, 4000054745112192, RoundDown(0.05572809,4),39088168},
+	{[]int{36, 42}, 1493352, 267914296, 282844648, 4000054745112192, RoundDown(0.05572809,4),39088168},
 }
 
 func TestFibValues(t *testing.T) {

@@ -12,7 +12,7 @@ type Fib struct{
 
 //Specifies the corresponding Fibonacci Number for the N value inputted
 
-func  (fib *Fib) Fib() int {
+func  (fib *Fib) init() int {
 	var p int
 	var q int
 	p= 0

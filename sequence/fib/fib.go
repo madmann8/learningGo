@@ -5,22 +5,18 @@ package fib
 import(
 )
 
-type Fib struct{
-	N int
-	M int
-}
-
 //Specifies the corresponding Fibonacci Number for the N value inputted
 
-func  (fib *Fib) init() int {
+func Fib (N int) int {
+
 	var p int
 	var q int
 	p= 0
 	q= 1
-	for i := 0; int(i) <int(fib.N); i++ {
+	for i := 0; int(i) <int(N); i++ {
 		p, q = q, p+q
 	}
-	return p
+	F=p
 }
 
 //Adds the N and M Fibonacci Values

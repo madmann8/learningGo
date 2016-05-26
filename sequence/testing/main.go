@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	s:= fib.ini{36,2}
+	s:= fib.Fib{}(36,2)
 	fmt.Println(s.Sum())
 }

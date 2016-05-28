@@ -1,122 +1,80 @@
 // Package fib allows for usage of various Fibonacci Numbers
-// In the Fib Struct two values are specified. N is the value of the primary modifier in methods and M is the secondary modifierpackage fib
+
 package fib
 
-import(
+import ()
+import (
+	"math"
 )
 
 //Specifies the corresponding Fibonacci Number for the N value inputted
+type Fib struct {
+	FibNum float64
+	Phi float64
+}
 
-func Fib (N int) int {
+func (Fib *Fib) Fib(N float64) *Fib  {
 
-	var p int
-	var q int
-	p= 0
-	q= 1
-	for i := 0; int(i) <int(N); i++ {
-		p, q = q, p+q
-	}
-	F=p
+	Fib.FibNum=p
+	return Fib
 }
 
 //Adds the N and M Fibonacci Values
 
-func (fib *Fib) Add() int {
-	p:= 0
-	q:= 1
-	for i := 0; i < fib.N; i++ {
-		p, q = q, p+q
-	}
-	f:= p
+func (Fib *Fib) Add (N float64) *Fib {
 	r:= 0
 	t:= 1
-	for i := 0; i < fib.M; i++ {
+	for i := 0; i < N; i++ {
 		r, t = t, r+t
 	}
-	return f+r
+	Fib.FibNum+=r
+	return Fib
 }
 
 //Multiplies the N and M Fibonacci Values
 
-func (fib *Fib) Mul() int {
-	p:= 0
-	q:= 1
-	for i := 0; i < fib.N; i++ {
-		p, q = q, p+q
-	}
-	f:= p
+func  (Fib *Fib) Mul(M float64) *Fib {
+	
 	r:= 0
 	t:= 1
-	for i := 0; i < fib.M; i++ {
+	for i := 0; i < M; i++ {
 		r, t = t, r+t
 	}
-	return f*r
+	Fib.FibNum*=r
+	return Fib
 }
 
 //Divides the N and M Fibonacci Values
 
-func (fib *Fib) Div() float64 {
-	var p float64
-	p= 0
-	var q float64
-	q= 1
-	for i := 0; float64(i) < float64(fib.N); i++ {
-		p, q = q, p+q
-	}
-	var f float64
-	f= p
+func (Fib *Fib) Div(N float64) *Fib {
 	var r float64
 	var t float64
 	r= 0
 	t= 1
-	for i := 0; float64(i) < float64(fib.M); i++ {
+	for i := 0; float64(i) < float64(N); i++ {
 		r, t = t, r+t
 	}
-	return f/r
+	Fib.FibNum/=r
+	return Fib
 
 }
 
 //Adds all Fibonacci values prior to N and N
 
-func (fib *Fib) Sum()int {
+func (Fib *Fib) Sum(N float64) *Fib {
 	p:= 0
 	q:= 1
 	s:=0
-	for i := 0; i < fib.N; i++ {
+	for i := 0; i < N; i++ {
 		p, q = q, p+q
 		s+=p
 	}
-	return s
+	return Fib
 }
 
 //Calculates the Golden Ratio using N and M
 
-func (fib *Fib) Phi()float64 {
-	var p float64
-	p= 0
-	var q float64
-	q= 1
-	for i := 0; float64(i) < float64(fib.N); i++ {
-		p, q = q, p+q
-	}
-	var f float64
-	f= p
-	var r float64
-	var t float64
-	r= 0
-	t= 1
-	for i := 0; float64(i) < float64(fib.M); i++ {
-		r, t = t, r+t
-	}
-	var g float64
-	g=f+r
-	var b float64
-	b= g/r
-	return float64(b)
+func (Fib *Fib) Phi() *Fib {
+	Fib.Phi=(1+math.Sqrt(5))/2
+	return Fib
 }
-
-
-
-
-
-

@@ -13,9 +13,17 @@ type Fib struct {
 	Phi float64
 }
 
-func (Fib *Fib) Fib(N float64) *Fib  {
+func NewSeq(s string) *Fib {
+	var s = &Fib{
+		FibNum: 0,
+		Phi: 0,
+	}
 
-	Fib.FibNum=p
+	return s
+}
+
+func (Fib *Fib) Fib(N float64) *Fib  {
+	Fib.FibNum=(Fib.Phi^(N)-(-1*Fib.Phi)^(-1*N))/math.Sqrt(5)
 	return Fib
 }
 

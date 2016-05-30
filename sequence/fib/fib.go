@@ -13,6 +13,7 @@ type Fib struct {
 
 var Phi float64
 
+//Initiates Fibonacci Sequence
 func NewFib() *Fib {
 	var f = &Fib{
 		FibNum: 0,
@@ -20,13 +21,14 @@ func NewFib() *Fib {
 	Phi = (1 + math.Sqrt(5)) / 2
 	return f
 }
+//Fib N finds nth number of Fibonacci sequence
 
 func (f *Fib) FibN(N float64) *Fib {
 	f.FibNum = (((math.Pow(Phi, N)) - math.Pow((-1*Phi), (-1*N))) / math.Sqrt(5))
 	return f
 }
 
-//Adds the N and M Fibonacci Values
+//Adds the N Fibonacci Values to the previously calculated number(s)
 
 func (f *Fib) Add(N float64) *Fib {
 	var r float64
@@ -35,7 +37,7 @@ func (f *Fib) Add(N float64) *Fib {
 	return f
 }
 
-//Multiplies the N and M Fibonacci Values
+//Multiplys the N Fibonacci Values by the previously calculated number(s)
 
 func (f *Fib) Mul(N float64) *Fib {
 	var r float64
@@ -44,7 +46,7 @@ func (f *Fib) Mul(N float64) *Fib {
 	return f
 }
 
-//Divides the N and M Fibonacci Values
+//Divides the N Fibonacci Values by the previously calculated number(s)
 
 func (f *Fib) Div(N float64) *Fib {
 	var r float64
@@ -54,7 +56,7 @@ func (f *Fib) Div(N float64) *Fib {
 
 }
 
-//Adds all Fibonacci values prior to N and N
+//Adds all Fibonacci values prior to N and including N
 
 func (f *Fib) Sum(N float64) float64 {
 	var r float64
@@ -66,8 +68,11 @@ func (f *Fib) Sum(N float64) float64 {
 	}
 	return r
 }
-
+//Required to end sequence
 func (f *Fib) End() float64 {
 	return f.FibNum
 }
-//Calculates the Golden Ratio using N and M
+//Returns Golden Ratio
+func (f *Fib) Phi() float64 {
+	return Phi
+}

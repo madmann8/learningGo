@@ -6,15 +6,23 @@ import (
 )
 
 type testnumbers struct {
-	values     []int
-	FibvaluenN int
-	FibvaluenM int
-	Add        int
-	Mult       int
+	ValueN float64
+	FibValueN float64
+	Add        float64
+	Mult       float64
 	Div        float64
-	Sum int
+	Sum float64
 }
-func RoundDown(input float64, places int) (newVal float64) {
+
+func Round64(x float64) float64 {
+	i, f := math.Modf(x)
+	if f >= 0.5 {
+		return i + 1.0
+	}
+	return i
+}
+
+func RoundDown(input float64, places float64) (newVal float64) {
 	var round float64
 	pow := math.Pow(10, float64(places))
 	digit := pow * input
@@ -24,24 +32,23 @@ func RoundDown(input float64, places int) (newVal float64) {
 }
 
 var tests = []testnumbers{
-	{[]int{1, 2}, 1, 1, 2, 1, 1,1},
-	{[]int{6, 10}, 8, 55, 63, 440, RoundDown(0.14545454545,4,),20},
-	{[]int{36, 42}, 1493352, 267914296, 282844648, 4000054745112192, RoundDown(0.05572809,4),39088168},
+	{1, 1, 2, 1, 1,1},
+	{6, 8, 16, 64, 1,20},
+	{8, 21, 42 , 441, 1,143},
 }
 
-func TestFibValues(t *testing.T) {
+func  TestFibValue(t *testing.T) {
 	for i := 0; i < 3; i++ {
 		s := tests[i]
-		v := s.FibvaluenN
-		pair := s.values
-		x:=pair[0]
-		y:=pair[1]
-		l := Fib{N:x,M:y}
-		if v != l.Fib() {
+		v := s.ValueN
+		c:=s.FibValueN
+		l:=NewFib()
+		x:=Round64(l.FibN(v).End())
+		if c != x {
 			t.Error(
-				"For", "Fib()",
-				"expected", v,
-				"got", l.Fib(),
+				"For", "FibN()",
+				"expected", c,
+				"got", x,2,
 			)
 		}
 
@@ -51,105 +58,70 @@ func TestFibValues(t *testing.T) {
 func TestFibAdd(t *testing.T) {
 	for i := 0; i < 3; i++ {
 		s := tests[i]
-		v := s.Add
-		pair := s.values
-		x:=pair[0]
-		y:=pair[1]
-		l := Fib{N:x,M:y}
-		if v != l.Add() {
+		v := s.ValueN
+		c:=s.Add
+		l:=NewFib()
+		if c != Round64(l.FibN(v).Add(v).End()) {
 			t.Error(
-				"For", "Add()",
-				"expected", v,
-				"got", l.Add(),
+				"For", "Add()",v,
+				"expected", s.Add,
+				"got", l.Add(v),
 			)
 		}
 
 	}
-
 }
 func TestFibMul(t *testing.T) {
 	for i := 0; i < 3; i++ {
 		s := tests[i]
-		v := s.Mult
-		pair := s.values
-		x:=pair[0]
-		y:=pair[1]
-		l := Fib{N:x,M:y}
-		if v != l.Mul() {
+		v := s.ValueN
+		c:=s.Mult
+		l:=NewFib()
+		if c != l.FibN(v).Mul(v).End() {
 			t.Error(
-				"For", "Mul()",
-				"expected", v,
-				"got", l.Mul(),
+				"For", "Add()",
+				"expected", s.Mult,
+				"got", l.Mul(v),
 			)
 		}
 
 	}
-
 }
 
 func TestFibDiv(t *testing.T) {
 	for i := 0; i < 3; i++ {
-		s := tests[i]
-		v := s.Div
-		pair := s.values
-		x := pair[0]
-		y := pair[1]
-		l := Fib{N:x, M:y}
-		f := RoundDown(l.Div(), 4)
-		if v != f {
-			t.Error(
-				"For", "Div()",
-				"expected", v,
-				"got", f,
-			)
+		for i := 0; i < 3; i++ {
+			s := tests[i]
+			v := s.ValueN
+			c := s.Div
+			l := NewFib()
+			if c != l.FibN(v).Div(v).End() {
+				t.Error(
+					"For", "Div()",
+					"expected", s.Div,
+					"got", l.Div(v),
+				)
+			}
+
 		}
-
 	}
-
 }
 
-func TestFibPhi(t *testing.T) {
-	for i := 0; i < 3; i++ {
-		s := tests[i]
-		pair := s.values
-		x := pair[0]
-		y := pair[1]
-		l := Fib{N:x, M:y}
-		f := RoundDown(l.Phi(), 0)
-		var e bool
-		if f==1 {
-			e=true
-		}
-		if f== 2{
-			e=true
-		}
-		if e!=true   {
-			t.Error(
-				"For", "Phi()",
-				"expected", "1 or 2",
-				"got", f,
-			)
-		}
-
-	}
-
-}
 
 func TestFibSum(t *testing.T) {
 	for i := 0; i < 3; i++ {
 		s := tests[i]
 		v := s.Sum
-		pair := s.values
-		x:=pair[0]
-		y:=pair[1]
-		l := Fib{N:x,M:y}
-		if v != l.Sum() {
+		c:=s.Sum
+		l:=NewFib()
+		if c != s.Sum {
 			t.Error(
 				"For", "Sum()",
-				"expected", v,
-				"got", l.Fib(),
+				"expected", s.Sum,
+				"got", l.Sum(v),
 			)
 		}
 
 	}
 }
+
